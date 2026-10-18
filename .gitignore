@@ -1,0 +1,7 @@
+.idea/
+/target
+/.direnv
+/logs/
+/movement/calibration.json
+/pid_log.csv
+/.~lock.pid_log.csv#

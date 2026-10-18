@@ -1,0 +1,17 @@
+[package]
+name = "planet"
+publish.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+robolab-bot-base.workspace = true
+
+# extra
+clap.workspace = true
+serde.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true

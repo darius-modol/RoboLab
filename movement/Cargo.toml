@@ -1,0 +1,21 @@
+[package]
+name = "movement"
+publish.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+robolab-bot-base.workspace = true
+ev3dev-lang-rust.workspace = true
+ev3dev-lang-rust.features = ["ev3"]
+
+# extra
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+rand = "0.10.0"
+
+[dev-dependencies]
+rstest.workspace = true

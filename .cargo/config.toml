@@ -1,0 +1,28 @@
+[profile.release]
+strip = "debuginfo"
+
+[net]
+git-fetch-with-cli = true
+
+[env]
+CC_KNOWN_WRAPPER_CUSTOM = 'zig'
+CC_armv5te_unknown_linux_musleabi = 'zig cc'
+# override mismatching (zig vs rust) target tuple
+CFLAGS_armv5te_unknown_linux_musleabi = "-target arm-linux-musleabi -march=arm926ej_s -mcpu=arm926ej_s --target=arm-linux-musleabi"
+
+# avoid build failures for arm targets
+# https://github.com/aws/aws-lc-rs/issues/931#issuecomment-3643733978
+AWS_LC_SYS_NO_JITTER_ENTROPY = "1"
+
+# makes linking work on apple host work 100%
+[target.aarch64-apple-darwin]
+linker = "rust-lld"
+[target.x86_64-apple-darwin]
+linker = "rust-lld"
+
+# override mismatching (zig vs rust) target tuple
+[target.armv5te-unknown-linux-musleabi]
+# linker = "zcc-static-armv5te" # specified via env var in justfile (unix vs windows)
+rustflags = [
+    "-Clink-args=-target arm-linux-musleabi -march=arm926ej_s -mcpu=arm926ej_s --target=arm-linux-musleabi",
+]

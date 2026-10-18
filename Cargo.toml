@@ -1,0 +1,32 @@
+# DO NOT EDIT
+[workspace]
+resolver = "3"
+members = ["communication", "movement", "planet", "bot"]
+default-members = ["bot"]
+
+[workspace.package]
+# DO NOT EDIT
+publish = false
+version = "0.0.0"
+edition = "2024"
+license = "EUPL-1.2"
+
+# DO NOT EDIT
+[workspace.dependencies]
+# workspace
+communication.path = './communication'
+movement.path = './movement'
+planet.path = './planet'
+
+ev3dev-lang-rust = "0.15.3"
+robolab-bot-base = { git = "ssh://git@se-gitlab.inf.tu-dresden.de/robolab-public/bot-base.git", branch = "main" }
+rumqttc = "=0.24.0"
+
+clap = { version = "4.5.60", features = ["derive", "env"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.149", features = ["preserve_order"] }
+tracing = { version = "0.1.44", features = ["log"] }
+rand = "0.10.0"
+uuid = { version = "1.21.0", default-features = false, features = ["v7", "std"] }
+# use only for dev-dependencies
+rstest = "0.26.1"

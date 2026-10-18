@@ -1,0 +1,20 @@
+[package]
+name = "communication"
+publish.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+robolab-bot-base.workspace = true
+rumqttc.workspace = true
+uuid.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# extra
+clap.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+rstest.workspace = true

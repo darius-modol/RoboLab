@@ -1,0 +1,26 @@
+[package]
+name = "bot"
+publish.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+# DO NOT EDIT
+[dependencies]
+communication.workspace = true
+movement.workspace = true
+planet.workspace = true
+robolab-bot-base.workspace = true
+ev3dev-lang-rust.workspace = true
+rand.workspace = true
+ev3dev-lang-rust.features = ["ev3"]
+
+# extra
+clap.workspace = true
+serde.workspace = true
+tracing.workspace = true
+serde_json = "1.0.149"
+log = "0.4.29"
+
+[dev-dependencies]
+rstest.workspace = true
